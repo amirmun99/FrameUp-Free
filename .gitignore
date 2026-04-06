@@ -1,0 +1,30 @@
+node_modules/
+out/
+dist/
+dist-electron/
+.env
+*.local
+.DS_Store
+Thumbs.db
+.claude/
+
+# Source mockup SVGs (large, not needed in repo)
+mockups/
+
+# Build artifacts
+device-metadata.json
+
+# Testing notes
+*.rtf
+
+# Supabase CLI temp files
+supabase/.temp/
+
+# Internal-only documentation (keep locally, not for public repo)
+CLAUDE.md
+FRAMEUP_SPEC.md
+docs/ARCHITECTURE.md
+docs/STATUS.md
+docs/API.md
+docs/internal/
+round\ 3\ testing.md

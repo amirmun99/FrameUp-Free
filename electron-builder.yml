@@ -1,0 +1,47 @@
+appId: com.frameup.app
+productName: Frameup
+directories:
+  buildResources: build
+  output: dist-electron
+
+# Verify ASAR archive integrity at startup to detect tampering
+asarIntegrity: true
+
+# Publish releases to GitHub — electron-updater reads from here automatically
+publish:
+  provider: github
+  owner: amirmun99
+  repo: frameup
+
+mac:
+  target:
+    - dmg
+    - zip          # zip required for macOS auto-update (Squirrel)
+  category: public.app-category.developer-tools
+  icon: build/icon.icns
+  hardenedRuntime: true
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.plist
+  gatekeeperAssess: false
+  # Notarization — electron-builder v24+ handles this natively.
+  # Requires APPLE_ID, APPLE_APP_SPECIFIC_PASSWORD, APPLE_TEAM_ID in CI env.
+  notarize:
+    teamId: ${APPLE_TEAM_ID}
+
+win:
+  target:
+    - nsis         # installer
+    - nsis-web     # web installer (smaller download)
+  icon: build/icon.ico
+  publisherName: Frameup
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+
+protocols:
+  name: frameup
+  schemes:
+    - frameup

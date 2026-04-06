@@ -1,0 +1,53 @@
+{
+  "name": "frameup-free",
+  "version": "0.9.0-beta.1",
+  "description": "Free, open-source screenshot mockup tool for developers",
+  "main": "./out/main/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "postinstall": "electron-vite build",
+    "build:mac": "npm run build && electron-builder --mac",
+    "build:win": "npm run build && electron-builder --win"
+  },
+  "keywords": [
+    "electron",
+    "screenshots",
+    "mockups",
+    "device-frames"
+  ],
+  "author": "9OneFour",
+  "license": "ISC",
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.2.0",
+    "better-sqlite3": "^12.8.0",
+    "electron": "^41.0.3",
+    "electron-updater": "^6.8.3",
+    "electron-vite": "^5.0.0",
+    "konva": "^10.2.3",
+    "playwright": "^1.58.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-konva": "^19.2.3",
+    "react-router-dom": "^6.30.3",
+    "vite": "^7.3.1",
+    "xlsx": "^0.18.5",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.27",
+    "electron-builder": "^26.8.1",
+    "postcss": "^8.5.8",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5.9.3"
+  }
+}
