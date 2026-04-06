@@ -23,7 +23,7 @@
   "dependencies": {
     "@vitejs/plugin-react": "^5.2.0",
     "better-sqlite3": "^12.8.0",
-    "electron": "^41.0.3",
+    "electron": "^41.1.0",
     "electron-updater": "^6.8.3",
     "electron-vite": "^5.0.0",
     "konva": "^10.2.3",
