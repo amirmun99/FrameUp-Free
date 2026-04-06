@@ -2,7 +2,7 @@
 
 Overlays let you add text and badges on top of your mockup. They are positioned on the canvas and can be dragged, resized, and rotated.
 
-## Text Overlays (Pro)
+## Text Overlays
 
 Add custom text to your mockup for headlines, descriptions, or call-to-action copy.
 
@@ -14,7 +14,7 @@ Add custom text to your mockup for headlines, descriptions, or call-to-action co
 - **Color** — Any hex color
 - **Alignment** — Left, center, or right
 
-## Badge Overlays (Pro)
+## Badge Overlays
 
 Add store badges and promotional badges:
 

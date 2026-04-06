@@ -2,7 +2,7 @@
 
 Frameup supports multiple capture sources. Navigate to the **Capture** page from the sidebar to choose a source.
 
-## URL Capture (Free)
+## URL Capture
 
 Capture any public website by entering its URL.
 
@@ -19,7 +19,7 @@ Capture any public website by entering its URL.
 - For sites behind login walls, use the Upload source instead
 - Full page captures may be very tall — consider Viewport mode for cleaner mockups
 
-## Upload Screenshot (Free)
+## Upload Screenshot
 
 Upload an existing screenshot or image file from your computer.
 
@@ -27,13 +27,13 @@ Upload an existing screenshot or image file from your computer.
 
 You can also **drag and drop** images directly onto the Frameup window from anywhere.
 
-## Local File (Free)
+## Local File
 
 Capture a local HTML file or image. Frameup renders HTML files using a browser engine for pixel-perfect results.
 
 **Supported formats:** HTML, HTM, PNG, JPG, JPEG, WebP, GIF
 
-## iOS Simulator (Pro)
+## iOS Simulator
 
 Capture directly from a running iOS Simulator on macOS.
 
@@ -48,7 +48,7 @@ Capture directly from a running iOS Simulator on macOS.
 3. Choose the booted device from the list
 4. Click **Capture**
 
-## Sitemap Scraper (Pro)
+## Sitemap Scraper
 
 Batch capture pages from an entire website using its sitemap.
 
@@ -61,15 +61,16 @@ Batch capture pages from an entire website using its sitemap.
 
 A progress bar shows capture status. All captures are saved to your library.
 
-## Notion (Pro)
+## Notion
 
 Capture Notion pages as pixel-perfect browser screenshots.
 
 **Setup:**
-1. Click **Connect Notion** to open a browser window
-2. Log in to your Notion account if prompted
-3. Select the pages you want Frameup to access and click **Allow**
-4. The browser closes automatically and your pages appear in the list
+1. Copy `.env.example` to `.env` and fill in `VITE_NOTION_CLIENT_ID` and `NOTION_CLIENT_SECRET`
+2. Click **Connect Notion** to open a browser window
+3. Log in to your Notion account if prompted
+4. Select the pages you want Frameup to access and click **Allow**
+5. The browser closes automatically and your pages appear in the list
 
 **Capture settings:**
 - **Viewport** — Mobile, Tablet, or Desktop
@@ -79,11 +80,15 @@ Capture Notion pages as pixel-perfect browser screenshots.
 
 **Batch capture:** Select multiple pages with checkboxes, then click **Capture Selected**. A progress bar tracks the batch.
 
-## Google Sheets (Coming Soon)
+## Google Sheets
 
-Google Sheets capture is planned for a future release.
+Capture Google Sheets as styled screenshots.
 
-## Excel / CSV (Pro)
+**Setup:**
+1. Copy `.env.example` to `.env` and fill in `VITE_GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`
+2. Click **Connect Google** and follow the OAuth flow
+
+## Excel / CSV
 
 Upload and capture spreadsheets as styled screenshots.
 

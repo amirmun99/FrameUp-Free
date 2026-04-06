@@ -2,16 +2,22 @@
 
 ## Installation
 
-Download Frameup for your platform:
+**From source** (recommended during beta):
 
-- **macOS** — `.dmg` installer (Apple Silicon + Intel)
-- **Windows** — `.exe` installer
+```bash
+git clone https://github.com/amirmun99/FrameUp-Free.git
+cd FrameUp-Free
+npm install
+npm run dev
+```
 
-Double-click to install and launch the app.
+The app opens in a desktop window. No account or environment setup required.
+
+**Requirements:** Node.js 20+, macOS or Windows
 
 ## First Launch
 
-When you open Frameup for the first time, you'll see the **Home** screen with template options to get started quickly.
+When you open Frameup for the first time, you'll see a short welcome tour. After completing it, you'll land on the **Home** screen.
 
 ### Quick Start
 
@@ -20,15 +26,6 @@ When you open Frameup for the first time, you'll see the **Home** screen with te
 3. Your screenshot loads into the **Editor** with a device frame
 4. Customize the background, device, and overlays
 5. Click **Export** to save your mockup
-
-### Sign In (Optional)
-
-Sign in with Google, GitHub, or a magic link to:
-- Save projects to the cloud
-- Access your projects across sessions
-- Track your export usage
-
-Free users get 10 exports per month. [Upgrade to Pro](plans-and-pricing.md) for unlimited exports and all features.
 
 ## Interface Overview
 

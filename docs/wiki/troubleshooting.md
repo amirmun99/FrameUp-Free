@@ -28,23 +28,10 @@
 
 ### Export button is greyed out
 - Make sure you have a screenshot loaded in the canvas
-- Free users: check if you've hit the 10 exports/month limit
 
 ### Batch export only creates some files
 - Check that the output folder has write permissions
 - Very large exports may take a few seconds per file
-
-## Authentication Issues
-
-### Can't sign in
-- Check your internet connection
-- Try a different auth method (Google, GitHub, or magic link)
-- Clear the app data and try again
-
-### Notion won't connect
-- Make sure the Notion integration is properly configured
-- When the browser window opens, log in and click **Allow** to grant access
-- If the browser doesn't close automatically, close it manually — your connection may still have succeeded
 
 ## Performance Issues
 
@@ -63,6 +50,13 @@
 Go to **Settings** and click **Check for updates**. The app will download and install updates automatically.
 
 ### Where is my data stored?
-- **Projects** are stored in the cloud (Supabase) and require sign-in
-- **Captures** are cached locally in a SQLite database in your app data folder
-- **Notion/Sheets session cookies** are stored locally and cleared on disconnect
+All data is stored locally on your machine — no cloud, no account required.
+
+- **Projects** — `{dataDirectory}/projects.db` (SQLite)
+- **Captures** — `{dataDirectory}/captures.db` (SQLite)
+- **Notion/Sheets session cookies** — stored locally by Playwright, cleared on disconnect
+
+The default data directory is `~/Library/Application Support/Frameup Free/` on macOS and `%APPDATA%\Frameup Free\` on Windows. You can change it in **Settings > Data Storage**.
+
+### Something looks broken
+[Open an issue on GitHub](https://github.com/amirmun99/FrameUp-Free/issues) with a description and steps to reproduce.

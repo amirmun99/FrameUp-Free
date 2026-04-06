@@ -19,7 +19,7 @@
     "device-frames"
   ],
   "author": "9OneFour",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@vitejs/plugin-react": "^5.2.0",
     "better-sqlite3": "^12.8.0",

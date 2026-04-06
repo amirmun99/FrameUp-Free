@@ -1,6 +1,6 @@
-# Frameup User Guide
+# Frameup Free — User Guide
 
-Welcome to Frameup — the desktop app for creating polished device mockups and marketing visuals from screenshots.
+Welcome to Frameup Free — the free, open-source desktop app for creating polished device mockups and marketing visuals from screenshots.
 
 ## Table of Contents
 
@@ -12,5 +12,4 @@ Welcome to Frameup — the desktop app for creating polished device mockups and 
 6. [Exporting](exporting.md)
 7. [Projects](projects.md)
 8. [Keyboard Shortcuts](keyboard-shortcuts.md)
-9. [Plans & Pricing](plans-and-pricing.md)
-10. [Troubleshooting](troubleshooting.md)
+9. [Troubleshooting](troubleshooting.md)

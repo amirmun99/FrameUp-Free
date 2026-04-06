@@ -1,25 +1,20 @@
 # Device Frames
 
-Frameup includes 177 high-quality device mockup frames across 5 categories.
+Frameup includes 24 high-quality SVG device mockup frames across 5 categories. All devices are available — no restrictions.
 
 ## Categories
 
-| Category | Count | Examples |
-|----------|-------|---------|
-| **Phones** | 129 | iPhone 17 Pro Max, iPhone 16, iPhone SE, Galaxy S25 Ultra, Pixel 9 Pro |
-| **Tablets** | 20 | iPad Pro 13", iPad Air 11", iPad Mini, Surface Pro, Galaxy Z Fold |
-| **Laptops** | 15 | MacBook Pro 16", MacBook Air 15", Dell XPS, Surface Laptop, Pixelbook Go, Chromebook |
-| **Displays** | 9 | iMac 24" |
-| **Browsers** | 4 | Chrome, Safari, Firefox, Arc (each with light and dark variants) |
+| Category | Examples |
+|----------|---------|
+| **Phones** | iPhone 17 Pro Max, iPhone 17 Pro, iPhone 17, iPhone 16 Pro, iPhone 16, iPhone SE, Galaxy S25 Ultra, Galaxy Z Fold, Pixel 9 Pro |
+| **Tablets** | iPad Pro 13", iPad Air 11", iPad Mini, Surface Pro |
+| **Laptops** | MacBook Pro 16", MacBook Air 15", Dell XPS, Pixelbook Go |
+| **Displays** | iMac 24" |
+| **Browsers** | Chrome, Safari, Firefox, Arc |
 
 ## Variants
 
-Most devices come in **light** and **dark** frame variants. Toggle between them in the Device panel.
-
-## Free vs Pro Devices
-
-- **Free plan** — Access to select devices (iPhone 17, Chrome browser)
-- **Pro plan** — All 177 devices unlocked
+Every device comes in **light** and **dark** frame variants. Toggle between them in the Device panel.
 
 ## Auto-Suggestion
 

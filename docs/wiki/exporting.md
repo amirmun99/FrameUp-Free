@@ -11,7 +11,7 @@ Export your current mockup as a high-resolution image.
 
 Exports are rendered at **2x resolution** for crisp retina displays.
 
-## Batch Export (Pro)
+## Batch Export
 
 Export your mockup in multiple sizes at once — perfect for app store submissions and social media.
 
@@ -42,13 +42,3 @@ Each export in a batch is automatically named with the target dimensions.
 |--------|----------|
 | **PNG** | Lossless quality, transparency support, app store submissions |
 | **WebP** | Smaller file size, web usage, social media |
-
-## Export Limits
-
-| Plan | Exports/Month |
-|------|---------------|
-| Free | 10 |
-| Pro | Unlimited |
-| Lifetime | Unlimited |
-
-Your current usage is shown in the Export panel.

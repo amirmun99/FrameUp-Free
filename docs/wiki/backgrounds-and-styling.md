@@ -2,7 +2,7 @@
 
 ## Background Presets
 
-Frameup includes 45 background presets organized into categories:
+Frameup includes 50+ background presets organized into categories. All presets are available.
 
 ### Gradients (25 presets)
 
@@ -31,11 +31,14 @@ Cosmos, Nebula, Aqua, Lava, Garden
 
 Export with no background (transparent PNG). Useful for compositing mockups into other designs.
 
+### Custom Image
+
+Upload your own background image.
+
 ## Device Shadow
 
 Toggle a subtle drop shadow beneath the device frame for added depth. Enable/disable in the Background panel.
 
-## Free vs Pro
+## Screenshot Corner Radius
 
-- **Free plan** — 3 background presets
-- **Pro plan** — All 45 presets + transparent option
+Adjust the corner radius applied to the screenshot inside the device frame from the Background panel.
