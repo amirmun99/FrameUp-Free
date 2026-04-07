@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Button from '../ui/Button'
-import { useAppStore } from '../../store/useAppStore'
 import { useCanvasStore } from '../../store/useCanvasStore'
 import { suggestDeviceFromAspectRatio } from '../../lib/devices'
 import { toast } from '../layout/Toaster'
@@ -80,7 +79,6 @@ export default function NotionCapture({ onComplete }: NotionCaptureProps) {
   const [selectedPages, setSelectedPages] = useState<Set<string>>(new Set())
   const [batchProgress, setBatchProgress] = useState<{ current: number; total: number } | null>(null)
 
-  const { user } = useAppStore()
   const { setScreenshot, setDevice } = useCanvasStore()
 
   const loadPages = useCallback(async () => {
@@ -206,7 +204,7 @@ export default function NotionCapture({ onComplete }: NotionCaptureProps) {
               height: img.naturalHeight,
               sourceType: 'notion',
               sourceLabel: page.title,
-              userId: user?.id ?? ''
+              userId: ''
             })
           } catch {
             console.warn('[library] Failed to save capture')
@@ -259,7 +257,7 @@ export default function NotionCapture({ onComplete }: NotionCaptureProps) {
                 height: 0,
                 sourceType: 'notion',
                 sourceLabel: page.title,
-                userId: user?.id ?? ''
+                userId: ''
               })
             } catch { /* ignore */ }
           }

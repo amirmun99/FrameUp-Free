@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Button from '../ui/Button'
-import { useAppStore } from '../../store/useAppStore'
 import { useCanvasStore } from '../../store/useCanvasStore'
 import { suggestDeviceFromAspectRatio, getDeviceById } from '../../lib/devices'
 import { toast } from '../layout/Toaster'
@@ -55,7 +54,6 @@ export default function SimulatorCapture({ onComplete }: SimulatorCaptureProps) 
   const [simulators, setSimulators] = useState<SimulatorDevice[]>([])
   const [loading, setLoading] = useState(true)
   const [capturing, setCapturing] = useState<string | null>(null)
-  const { user } = useAppStore()
   const { setScreenshot, setDevice } = useCanvasStore()
 
   useEffect(() => {
@@ -100,7 +98,7 @@ export default function SimulatorCapture({ onComplete }: SimulatorCaptureProps) 
               height: img.naturalHeight,
               sourceType: 'simulator',
               sourceLabel: device.name,
-              userId: user?.id ?? ''
+              userId: ''
             })
           } catch {
             console.warn('[library] Failed to save capture')

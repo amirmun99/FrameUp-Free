@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useAppStore } from '../../store/useAppStore'
 import { useCanvasStore } from '../../store/useCanvasStore'
 import { suggestDeviceFromAspectRatio } from '../../lib/devices'
 import Button from '../ui/Button'
@@ -10,7 +9,6 @@ interface LocalFileCaptureProps {
 }
 
 export default function LocalFileCapture({ onComplete }: LocalFileCaptureProps) {
-  const { user } = useAppStore()
   const { setScreenshot, setDevice } = useCanvasStore()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -34,7 +32,7 @@ export default function LocalFileCapture({ onComplete }: LocalFileCaptureProps) 
               height: img.height,
               sourceType: 'local',
               sourceLabel: 'Local file',
-              userId: user?.id ?? ''
+              userId: ''
             })
           } catch {
             console.warn('[library] Failed to save capture')

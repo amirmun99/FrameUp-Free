@@ -1,5 +1,4 @@
 import { useRef, useState, useCallback } from 'react'
-import { useAppStore } from '../../store/useAppStore'
 import { useCanvasStore } from '../../store/useCanvasStore'
 import { suggestDeviceFromAspectRatio } from '../../lib/devices'
 import Button from '../ui/Button'
@@ -10,7 +9,6 @@ interface UploadCaptureProps {
 }
 
 export default function UploadCapture({ onComplete }: UploadCaptureProps) {
-  const { user } = useAppStore()
   const { setScreenshot, setDevice } = useCanvasStore()
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [dragOver, setDragOver] = useState(false)
@@ -42,7 +40,7 @@ export default function UploadCapture({ onComplete }: UploadCaptureProps) {
               height: img.height,
               sourceType: 'upload',
               sourceLabel: file.name,
-              userId: user?.id ?? ''
+              userId: ''
             })
             if (!libResult.success) console.warn('[library] Save failed:', libResult.error)
           } catch (libErr) {

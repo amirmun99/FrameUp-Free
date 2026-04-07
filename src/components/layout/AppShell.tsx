@@ -121,7 +121,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
 
           {/* GitHub link */}
           <button
-            onClick={() => window.frameup.shell.openExternal('https://github.com/amirmun99/FrameUp-Free')}
+            onClick={() => window.open('https://github.com/amirmun99/FrameUp-Free', '_blank')}
             title="View on GitHub"
             className="mt-1 flex h-8 w-8 items-center justify-center rounded-lg text-text-secondary hover:text-primary hover:bg-surface transition-colors"
           >

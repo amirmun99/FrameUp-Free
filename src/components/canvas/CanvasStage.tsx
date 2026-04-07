@@ -221,6 +221,19 @@ export default function CanvasStage() {
             )
           }
 
+          // Dynamic Island overlay for batch export
+          if (overrideDevice.dynamicIslandBounds && !overrideDevice.noCutoutOf) {
+            const di = overrideDevice.dynamicIslandBounds
+            offLayer.add(
+              new Konva.Rect({
+                x: devX + di.x, y: devY + di.y,
+                width: di.width, height: di.height,
+                cornerRadius: di.cornerRadius,
+                fill: '#000000'
+              })
+            )
+          }
+
           // Clone overlays from the current export layer
           const currentOverlays = layer.find('.overlay')
           currentOverlays.forEach((node) => {
@@ -601,6 +614,19 @@ export default function CanvasStage() {
                 y={0}
                 width={device.width}
                 height={device.height}
+                listening={false}
+              />
+            )}
+
+            {/* Dynamic Island — rendered as a Konva shape to guarantee visibility */}
+            {device?.dynamicIslandBounds && !device?.noCutoutOf && (
+              <Rect
+                x={device.dynamicIslandBounds.x}
+                y={device.dynamicIslandBounds.y}
+                width={device.dynamicIslandBounds.width}
+                height={device.dynamicIslandBounds.height}
+                cornerRadius={device.dynamicIslandBounds.cornerRadius}
+                fill="#000000"
                 listening={false}
               />
             )}

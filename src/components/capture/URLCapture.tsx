@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useAppStore } from '../../store/useAppStore'
 import { useCanvasStore } from '../../store/useCanvasStore'
 import { suggestDeviceFromAspectRatio } from '../../lib/devices'
 import Button from '../ui/Button'
@@ -20,7 +19,6 @@ interface URLCaptureProps {
 }
 
 export default function URLCapture({ onComplete }: URLCaptureProps) {
-  const { user } = useAppStore()
   const { setScreenshot, setDevice } = useCanvasStore()
   const [url, setUrl] = useState('')
   const [viewport, setViewport] = useState<Viewport>('desktop')
@@ -38,6 +36,13 @@ export default function URLCapture({ onComplete }: URLCaptureProps) {
     if (!url) return
     setLoading(true)
     setError('')
+
+    // Guard: ensure we're running inside the Electron app (preload must inject window.frameup)
+    if (!window.frameup?.capture?.url) {
+      setError('Capture unavailable — make sure you\'re running via "npm run dev" in the Electron app, not a browser')
+      setLoading(false)
+      return
+    }
 
     // Validate URL format
     const fullUrl = url.startsWith('http') ? url : `https://${url}`
@@ -77,7 +82,7 @@ export default function URLCapture({ onComplete }: URLCaptureProps) {
             height: vp.height,
             sourceType: 'url',
             sourceLabel: fullUrl,
-            userId: user?.id ?? ''
+            userId: ''
           })
           if (!libResult.success) {
             console.warn('[library] Failed to save capture:', libResult.error)
@@ -100,8 +105,8 @@ export default function URLCapture({ onComplete }: URLCaptureProps) {
     } catch (err) {
       const msg = (err as Error).message ?? ''
       console.error('[URLCapture] Error:', msg)
-      if (msg.includes('undefined')) {
-        setError('Capture service unavailable — please restart the app')
+      if (msg.includes('Executable') || msg.includes('playwright') || msg.includes('chromium')) {
+        setError('Playwright browser not found — run: npx playwright install chromium')
       } else {
         setError('Could not load page — ' + (msg || 'check the URL and try again'))
       }

@@ -1,6 +1,5 @@
 import { useRef, useState, useCallback } from 'react'
 import * as XLSX from 'xlsx'
-import { useAppStore } from '../../store/useAppStore'
 import { useCanvasStore } from '../../store/useCanvasStore'
 import { suggestDeviceFromAspectRatio } from '../../lib/devices'
 import Button from '../ui/Button'
@@ -37,7 +36,6 @@ function wrapHTML(tableHtml: string, preserveFormatting: boolean): string {
 }
 
 export default function ExcelCapture({ onComplete }: ExcelCaptureProps) {
-  const { user } = useAppStore()
   const { setScreenshot, setDevice } = useCanvasStore()
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [dragOver, setDragOver] = useState(false)
@@ -163,7 +161,7 @@ export default function ExcelCapture({ onComplete }: ExcelCaptureProps) {
             height: img.naturalHeight,
             sourceType: 'excel',
             sourceLabel: `${fileName} — ${sheetName}`,
-            userId: user?.id ?? ''
+            userId: ''
           })
           if (!libResult.success) console.warn('[library] Save failed:', libResult.error)
         } catch (libErr) {

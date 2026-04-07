@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
 import Button from '../ui/Button'
-import { useAppStore } from '../../store/useAppStore'
 import { useCanvasStore } from '../../store/useCanvasStore'
 import { suggestDeviceFromAspectRatio } from '../../lib/devices'
 import { toast } from '../layout/Toaster'
@@ -21,7 +20,6 @@ export default function SheetsCapture({ onComplete }: SheetsCaptureProps) {
   const [sheets, setSheets] = useState<Sheet[]>([])
   const [loading, setLoading] = useState(true)
   const [capturing, setCapturing] = useState<string | null>(null)
-  const { user } = useAppStore()
   const { setScreenshot, setDevice } = useCanvasStore()
 
   const loadSheets = useCallback(async () => {
@@ -116,7 +114,7 @@ export default function SheetsCapture({ onComplete }: SheetsCaptureProps) {
               height: img.naturalHeight,
               sourceType: 'sheets',
               sourceLabel: sheet.name,
-              userId: user?.id ?? ''
+              userId: ''
             })
           } catch {
             console.warn('[library] Failed to save capture')

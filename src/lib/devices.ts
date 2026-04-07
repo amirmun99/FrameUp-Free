@@ -13,7 +13,8 @@ export const devices: DeviceFrame[] = [
     variants: ['light'],
     assetPath: { light: '/assets/devices/iphone-17-pro-max.svg', dark: '/assets/devices/iphone-17-pro-max.svg' },
     tier: 'free',
-    hasDynamicIsland: true
+    hasDynamicIsland: true,
+    dynamicIslandBounds: { x: 164.5, y: 23.33, width: 125, height: 36.67, cornerRadius: 18.335 }
   },
   {
     id: 'iphone-17-pro',
@@ -26,7 +27,8 @@ export const devices: DeviceFrame[] = [
     variants: ['light'],
     assetPath: { light: '/assets/devices/iphone-17-pro.svg', dark: '/assets/devices/iphone-17-pro.svg' },
     tier: 'free',
-    hasDynamicIsland: true
+    hasDynamicIsland: true,
+    dynamicIslandBounds: { x: 143.5, y: 22.33, width: 125, height: 36.67, cornerRadius: 18.335 }
   },
   {
     id: 'iphone-17-pro-max-no-cutout',
@@ -65,7 +67,8 @@ export const devices: DeviceFrame[] = [
     variants: ['light'],
     assetPath: { light: '/assets/devices/iphone-16-pro-max.svg', dark: '/assets/devices/iphone-16-pro-max.svg' },
     tier: 'pro',
-    hasDynamicIsland: true
+    hasDynamicIsland: true,
+    dynamicIslandBounds: { x: 164.5, y: 23.33, width: 125, height: 36.67, cornerRadius: 18.335 }
   },
   {
     id: 'iphone-16-pro',
@@ -78,7 +81,8 @@ export const devices: DeviceFrame[] = [
     variants: ['light'],
     assetPath: { light: '/assets/devices/iphone-16-pro.svg', dark: '/assets/devices/iphone-16-pro.svg' },
     tier: 'pro',
-    hasDynamicIsland: true
+    hasDynamicIsland: true,
+    dynamicIslandBounds: { x: 144.5, y: 23.33, width: 125, height: 36.67, cornerRadius: 18.335 }
   },
   {
     id: 'iphone-16-pro-max-no-cutout',
@@ -117,7 +121,8 @@ export const devices: DeviceFrame[] = [
     variants: ['light'],
     assetPath: { light: '/assets/devices/iphone-15-pro-max.svg', dark: '/assets/devices/iphone-15-pro-max.svg' },
     tier: 'pro',
-    hasDynamicIsland: true
+    hasDynamicIsland: true,
+    dynamicIslandBounds: { x: 167.5, y: 26.33, width: 125, height: 36.67, cornerRadius: 18.335 }
   },
   {
     id: 'iphone-15-pro',
@@ -130,7 +135,8 @@ export const devices: DeviceFrame[] = [
     variants: ['light'],
     assetPath: { light: '/assets/devices/iphone-15-pro.svg', dark: '/assets/devices/iphone-15-pro.svg' },
     tier: 'pro',
-    hasDynamicIsland: true
+    hasDynamicIsland: true,
+    dynamicIslandBounds: { x: 147.5, y: 26.33, width: 125, height: 36.67, cornerRadius: 18.335 }
   },
   {
     id: 'iphone-15-pro-max-no-cutout',
@@ -169,7 +175,8 @@ export const devices: DeviceFrame[] = [
     variants: ['light'],
     assetPath: { light: '/assets/devices/iphone-14-pro-max.svg', dark: '/assets/devices/iphone-14-pro-max.svg' },
     tier: 'pro',
-    hasDynamicIsland: true
+    hasDynamicIsland: true,
+    dynamicIslandBounds: { x: 169.5, y: 28.33, width: 125, height: 36.67, cornerRadius: 18.335 }
   },
   {
     id: 'iphone-14-pro',
@@ -182,7 +189,8 @@ export const devices: DeviceFrame[] = [
     variants: ['light'],
     assetPath: { light: '/assets/devices/iphone-14-pro.svg', dark: '/assets/devices/iphone-14-pro.svg' },
     tier: 'pro',
-    hasDynamicIsland: true
+    hasDynamicIsland: true,
+    dynamicIslandBounds: { x: 149.5, y: 28.33, width: 125, height: 36.67, cornerRadius: 18.335 }
   },
   {
     id: 'iphone-14-pro-max-no-cutout',

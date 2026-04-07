@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react'
-import { useAppStore } from '../../store/useAppStore'
 import { useCanvasStore } from '../../store/useCanvasStore'
 import { suggestDeviceFromAspectRatio } from '../../lib/devices'
 import { toast } from '../layout/Toaster'
@@ -7,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 
 export default function DragDropOverlay() {
   const [dragging, setDragging] = useState(false)
-  const { user } = useAppStore()
   const { setScreenshot, setDevice } = useCanvasStore()
   const navigate = useNavigate()
 
@@ -49,7 +47,7 @@ export default function DragDropOverlay() {
               height: img.height,
               sourceType: 'upload',
               sourceLabel: file?.name ?? 'Dropped image',
-              userId: user?.id ?? ''
+              userId: ''
             })
           } catch {
             console.warn('[library] Failed to save capture')

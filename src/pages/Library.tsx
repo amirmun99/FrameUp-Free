@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useCanvasStore } from '../store/useCanvasStore'
-import { useAppStore } from '../store/useAppStore'
 import { suggestDeviceFromAspectRatio } from '../lib/devices'
 import Button from '../components/ui/Button'
 import Modal from '../components/ui/Modal'
@@ -36,8 +35,6 @@ const sourceLabels: Record<string, string> = {
 export default function Library() {
   const navigate = useNavigate()
   const { setScreenshot, setDevice } = useCanvasStore()
-  const { user } = useAppStore()
-  const userId = user?.id ?? ''
   const [captures, setCaptures] = useState<CaptureEntry[]>([])
   const [thumbnails, setThumbnails] = useState<Record<string, string>>({})
   const [loading, setLoading] = useState(true)
@@ -82,7 +79,7 @@ export default function Library() {
   }, [captures])
 
   const fetchCaptures = useCallback(async () => {
-    const result = await window.frameup.library.list(userId)
+    const result = await window.frameup.library.list()
     if (result.success && result.data) {
       setCaptures(result.data)
       // Load thumbnails for visible captures
@@ -97,14 +94,14 @@ export default function Library() {
       }
     }
     setLoading(false)
-  }, [userId])
+  }, [])
 
   useEffect(() => {
     fetchCaptures()
   }, [fetchCaptures])
 
   const handleOpen = async (capture: CaptureEntry) => {
-    const result = await window.frameup.library.get(capture.id, userId)
+    const result = await window.frameup.library.get(capture.id)
     if (result.success && result.data) {
       const suggested = suggestDeviceFromAspectRatio(result.data.width, result.data.height)
       setScreenshot(result.data.base64, result.data.width, result.data.height, result.data.mime)
@@ -115,14 +112,14 @@ export default function Library() {
 
   const handleDelete = async () => {
     if (deleteTarget) {
-      await window.frameup.library.remove(deleteTarget, userId)
+      await window.frameup.library.remove(deleteTarget)
       setDeleteTarget(null)
       setCaptures((prev) => prev.filter((c) => c.id !== deleteTarget))
     }
   }
 
   const handleClearAll = async () => {
-    await window.frameup.library.clear(userId)
+    await window.frameup.library.clear()
     setClearConfirm(false)
     setCaptures([])
     setThumbnails({})

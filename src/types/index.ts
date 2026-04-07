@@ -25,6 +25,7 @@ export interface DeviceFrame {
     dark: string
   }
   hasDynamicIsland?: boolean
+  dynamicIslandBounds?: { x: number; y: number; width: number; height: number; cornerRadius: number }
   noCutoutOf?: string  // ID of the standard device this is a no-cutout variant of
 }
 

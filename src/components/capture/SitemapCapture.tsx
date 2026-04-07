@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
 import Button from '../ui/Button'
-import { useAppStore } from '../../store/useAppStore'
 import { useCanvasStore } from '../../store/useCanvasStore'
 import { suggestDeviceFromAspectRatio } from '../../lib/devices'
 import { toast } from '../layout/Toaster'
@@ -10,7 +9,6 @@ interface SitemapCaptureProps {
 }
 
 export default function SitemapCapture({ onComplete }: SitemapCaptureProps) {
-  const { user } = useAppStore()
   const [domain, setDomain] = useState('')
   const [urls, setUrls] = useState<string[]>([])
   const [selected, setSelected] = useState<Set<number>>(new Set())
@@ -110,7 +108,7 @@ export default function SitemapCapture({ onComplete }: SitemapCaptureProps) {
                 height: vp.height,
                 sourceType: 'sitemap',
                 sourceLabel: capturedUrls[i] ?? 'Sitemap page',
-                userId: user?.id ?? ''
+                userId: ''
               }))
             )
           } catch {
